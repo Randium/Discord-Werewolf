@@ -2517,8 +2517,11 @@ def _autocomplete(string, lst):
         return (string, 1)
     else:
         choices = []
+        # Adding an alias for the most charming and experienced individual in town!
+        if lst == gamemodes and string.lower() in 'randium':
+            choices.append('randium')
         for item in lst:
-            if item.startswith(string):
+            if item.lower().startswith(string):
                 choices.append(item)
         if len(choices) == 1:
             return (choices[0], 1)
